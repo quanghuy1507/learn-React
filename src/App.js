@@ -1,21 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { Route } from "react-router-dom";
+import Todo from "./features/Todo";
+import Album from "./features/Album";
+import Colorbox from "./component/Colorbox";
+import Todolist from "./component/Todolist";
+import Clock from "./component/Clock";
+import Postlist from "./component/Postlist";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Quang Huy</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Home page
+      <Route path="/todo" component={Todo} />
+      <Route path="/album" component={Album} />
+      <Route path="/colorbox" component={Colorbox} />
+      <Route path="/todolist" component={Todolist} />
+      <Route path="/clock" component={Clock} />
+      <Route path="/postlist" component={Postlist} />
     </div>
   );
 }
