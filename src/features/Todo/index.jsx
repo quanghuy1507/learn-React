@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import TodoForm from "./component/TodoForm";
 import Todolist from "./component/Todolist";
 
 Todo.protoTypes = {};
@@ -54,11 +55,15 @@ function Todo(props) {
     (todo) => filterStatus === "all" || filterStatus === todo.status
   );
 
-  console.log(renderTodolist);
+  const handleTodoForm = (value) => {
+    console.log("Form submit", value);
+  };
 
   return (
     <div>
-      <h1>Todo List</h1>
+      <h3>Todo From</h3>
+      <TodoForm onSubmit={handleTodoForm} />
+      <h3>Todo List</h3>
       <Todolist TodoList={renderTodolist} onTodoclick={handleTodoclick} />
       <div>
         <button onClick={handleShowAll}>Show All</button>
